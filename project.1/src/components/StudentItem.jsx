@@ -2,7 +2,7 @@ import React from 'react'
 
 function StudentItem() {
   return (
-    <div>StudentItem</div>
+    <div><h3>register</h3></div>
   )
 }
 
