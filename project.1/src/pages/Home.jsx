@@ -15,6 +15,8 @@ import StudentList from "../components/StudentList";
 import SearchBar from "../components/SearchBar";
 import FilterBar from "../components/FilterBar";
 
+import style from '../styles/Home.module.css'
+
 function Home() {
   const [students, setStudents] = useState([]);
   const [search, setSearch] = useState("");
@@ -55,7 +57,7 @@ function Home() {
     .filter((s) => (status === "all" ? true : s.status === status));
 
   return (
-    <div>
+    <div className={style.main}>
       <h1>Student CRM</h1>
 
       <StudentForm
