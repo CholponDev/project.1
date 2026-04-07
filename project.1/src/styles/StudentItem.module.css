@@ -1,0 +1,66 @@
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.name {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  color: #0d6efd;
+}
+
+.text {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.status {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.editButton {
+  flex: 1;
+  padding: 6px;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.editButton:hover {
+  background-color: #198754;
+}
+
+.deleteButton {
+  flex: 1;
+  padding: 6px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover {
+  background-color: #a71d2a;
+}
