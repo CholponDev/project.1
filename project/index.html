@@ -1,13 +1,61 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>project</title>
+    <title>Resto App</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <header class="header">
+    <div class="container header__inner">
+
+      <div class="logo">LOGO</div>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#">Главная</a></li>
+          <li><a href="#">Меню</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="contacts">
+        <a href="tel:+996700000000">+996 700 000 000</a>
+      </div>
+
+    </div>
+  </header>
+  <section class="menu">
+    <div class="container">
+
+      <h2 class="menu__title">Меню</h2>
+
+      <ul class="menu__list">
+
+        <li>
+          <a href="#" class="menu__card" style="background-image: url('./images/menu1.jpg')">
+            <span>Завтраки</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="menu__card" style="background-image: url('./images/menu2.jpg')">
+            <span>Обеды</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#" class="menu__card" style="background-image: url('./images/menu3.jpg')">
+            <span>Ужины</span>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+  </section>
   </body>
 </html>
