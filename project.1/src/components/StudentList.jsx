@@ -1,9 +1,18 @@
-import React from 'react'
+import StudentItem from "./StudentItem";
 
-function StudentList() {
+function StudentList({ students, onDelete, onEdit }) {
   return (
-    <div>StudentList</div>
-  )
+    <div>
+      {students.map((s) => (
+        <StudentItem
+          key={s.id}
+          student={s}
+          onDelete={onDelete}
+          onEdit={onEdit}
+        />
+      ))}
+    </div>
+  );
 }
 
-export default StudentList
+export default StudentList;
