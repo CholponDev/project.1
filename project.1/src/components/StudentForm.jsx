@@ -1,3 +1,5 @@
+import style from '../styles/StudentForm.module.css'
+
 import { useEffect, useState } from "react";
 import {
   addDoc,
@@ -41,24 +43,24 @@ function StudentForm({ fetchStudents, editStudent, setEditStudent }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <form className={style.form} onSubmit={handleSubmit}>
+      <input className={style.input}
         placeholder="Аты"
         value={form.name}
         onChange={(e) => setForm({ ...form, name: e.target.value })}
       />
-      <input
+      <input className={style.input}
         placeholder="Телефон"
         value={form.phone}
         onChange={(e) => setForm({ ...form, phone: e.target.value })}
       />
-      <input
+      <input className={style.input}
         placeholder="Курс"
         value={form.course}
         onChange={(e) => setForm({ ...form, course: e.target.value })}
       />
 
-      <select
+      <select className={style.select}
         value={form.status}
         onChange={(e) => setForm({ ...form, status: e.target.value })}
       >
@@ -66,7 +68,8 @@ function StudentForm({ fetchStudents, editStudent, setEditStudent }) {
         <option value="finished">Finished</option>
       </select>
 
-      <button type="submit">
+      <button className={style.button}
+       type="submit">
         {editStudent ? "Update" : "Add"}
       </button>
     </form>

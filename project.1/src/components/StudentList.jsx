@@ -1,8 +1,10 @@
+import style from '../styles/StudentList.module.css'
+
 import StudentItem from "./StudentItem";
 
 function StudentList({ students, onDelete, onEdit }) {
   return (
-    <div>
+    <div className={style.list}>
       {students.map((s) => (
         <StudentItem
           key={s.id}
