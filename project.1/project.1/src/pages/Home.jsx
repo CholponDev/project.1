@@ -45,6 +45,7 @@ function Home() {
             <li>Уроки</li>
             <li>Модули</li>
             <li>Расписание</li>
+            <li>vxzczxczxczczx</li>
           </ul>
         </div>
       </div>
