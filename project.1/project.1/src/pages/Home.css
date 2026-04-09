@@ -1,0 +1,146 @@
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 30px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* ЛОГО */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.logoIcon {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2563eb, #22c55e);
+}
+
+/* МЕНЮ */
+.nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav li {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav li:hover {
+  color: #2563eb;
+}
+
+/* ПРАВАЯ ЧАСТЬ */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* КНОПКА */
+.authBtn {
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: none;
+  color: white;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #2563eb, #22c55e);
+}
+
+/* БУРГЕР */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+}
+
+/* БУРГЕР МЕНЮ */
+.menu {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.menu.active {
+  pointer-events: all;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.menu.active .overlay {
+  opacity: 1;
+}
+
+.panel {
+  position: absolute;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: white;
+  padding: 25px;
+  transition: 0.3s;
+}
+
+.menu.active .panel {
+  right: 0;
+}
+
+.panel ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.panel li:hover {
+  background: linear-gradient(135deg, #2563eb, #22c55e);
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* АДАПТИВ */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .authBtn {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+
+/* КОНТЕНТ */
+.content {
+  padding: 40px;
+}
