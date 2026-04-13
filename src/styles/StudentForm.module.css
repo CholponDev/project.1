@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d0d7e2;
+  outline: none;
+  min-width: 180px;
+}
+
+.input:focus {
+  border-color: #2f80ed;
+}
+
+.select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d0d7e2;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #2f80ed;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background: #1c60c7;
+}
