@@ -11,6 +11,8 @@ function Sidebar() {
         <Link className={style.link} to="/analytics">Analytics</Link>
         <Link className={style.link} to="/tasks">Tasks</Link>
         <Link className={style.link} to="/kanban">Kanban</Link>
+        <Link className={style.link} to="/todo">To Do</Link>
+
       </nav>
     </div>
   );

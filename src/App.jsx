@@ -6,6 +6,7 @@ import Analytics from "./pages/Analytics";
 import Tasks from "./pages/Tasks";
 import Kanban from "./pages/Kanban";
 import AdminPage from "./pages/AdminPage";
+import Todo from "./pages/Todo";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/kanban" element={<Kanban />} />
+          <Route path="/todo" element={<Todo/>} />
+          
           <Route path="/Hellow" element={ <h1>Hellow world</h1>}/>
         </Routes>
       </MainLayout>
