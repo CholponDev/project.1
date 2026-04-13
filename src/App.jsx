@@ -7,6 +7,7 @@ import Tasks from "./pages/Tasks";
 import Kanban from "./pages/Kanban";
 import AdminPage from "./pages/AdminPage";
 import Todo from "./pages/Todo";
+import Register from "./pages/Register" 
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/kanban" element={<Kanban />} />
           <Route path="/todo" element={<Todo/>} />
+           <Route path="/rg" element={<Register />} />
+          
+
         </Routes>
       </MainLayout>
     </BrowserRouter>
