@@ -4,6 +4,7 @@ import { db } from "../firebase/firebase";
 import StudentList from "../components/StudentList";
 import SearchBar from "../components/SearchBar";
 import FilterBar from "../components/FilterBar";
+import style from "../styles/Home.module.css"
 
 function Home() {
   const [students, setStudents] = useState([]);
@@ -31,18 +32,24 @@ function Home() {
     .filter((s) => (status === "all" ? true : s.status === status));
 
   return (
-    <div>
-      <h1>Students</h1>
+    <div className={style.container}>
+      <h1 className={style.title}>Students</h1>
 
-      <SearchBar setSearch={setSearch} />
-      <FilterBar setStatus={setStatus} />
+      <div className={style.controls}>
+        <SearchBar setSearch={setSearch} />
+        <FilterBar setStatus={setStatus} />
+      </div>
 
-      <StudentList
+      
+      <div className={style.listWrapper}>
+        <StudentList
         students={filteredStudents}
         onDelete={() => {}}
         onEdit={() => {}}
         isAdmin={false}
       />
+      </div>
+      
     </div>
   );
 }

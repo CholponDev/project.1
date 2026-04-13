@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import style from "../styles/Sidebar.module.css"
+import { NavLink } from "react-router-dom";
 
 function Sidebar() {
   return (
-    <div className={style.sidebar} >
+    <>
+
+
+     <div className={style.sidebar} >
       <h2 className={style.logo}>CRM</h2>
 
       <nav className={style.nav} style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -15,6 +19,57 @@ function Sidebar() {
 
       </nav>
     </div>
+
+
+
+
+
+    {/* <NavLink 
+  to="/" 
+  className={({ isActive }) => 
+    isActive ? `${style.link} ${style.active}` : style.link
+  }
+>
+  Students
+</NavLink>
+
+<NavLink 
+  to="/analytics" 
+  className={({ isActive }) => 
+    isActive ? `${style.link} ${style.active}` : style.link
+  }
+>
+  Analytics
+</NavLink>
+
+<NavLink 
+  to="/tasks" 
+  className={({ isActive }) => 
+    isActive ? `${style.link} ${style.active}` : style.link
+  }
+>
+  Tasks
+</NavLink>
+
+<NavLink 
+  to="/kanban" 
+  className={({ isActive }) => 
+    isActive ? `${style.link} ${style.active}` : style.link
+  }
+>
+  Kanban
+</NavLink>
+
+<NavLink 
+  to="/todo" 
+  className={({ isActive }) => 
+    isActive ? `${style.link} ${style.active}` : style.link
+  }
+>
+  To Do
+</NavLink> */}
+
+    </>
   );
 }
 

@@ -8,6 +8,7 @@ import {
   doc,
 } from "firebase/firestore";
 
+import style from "../styles/AdminPage.module.css"
 import { db } from "../firebase/firebase";
 import StudentForm from "../components/StudentForm";
 import StudentList from "../components/StudentList";
@@ -46,24 +47,33 @@ function AdminPage() {
     .filter((s) => (status === "all" ? true : s.status === status));
 
   return (
-    <div>
-      <h1>Admin Panel</h1>
+    <div className={style.container}>
+      <h1 className={style.title}>Admin Panel</h1>
 
-      <StudentForm
+      <div className={style.formWrapper}>
+         <StudentForm
         fetchStudents={fetchStudents}
         editStudent={editStudent}
         setEditStudent={setEditStudent}
       />
+      </div>
 
+     
+     <div className={style.controls}>
       <SearchBar setSearch={setSearch} />
       <FilterBar setStatus={setStatus} />
+     </div>
+      
 
-      <StudentList
+      <div className={style.listWrapper}>
+        <StudentList
         students={filteredStudents}
         onDelete={handleDelete}
         onEdit={setEditStudent}
         isAdmin={true}
       />
+      </div>
+      
     </div>
   );
 }

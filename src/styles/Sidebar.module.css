@@ -1,29 +1,73 @@
 .sidebar {
-  width: 220px;
-  background: #0f172a;
-  color: white;
+  width: 240px;
   height: 100vh;
-  padding: 20px;
+  padding: 30px 20px;
+
+  background: linear-gradient(180deg, #2E4265, #8599AB);
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Логотип */
 .logo {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
 }
 
+/* Навигация */
 .nav {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
+/* Ссылка */
 .link {
-  color: #cbd5e1;
   text-decoration: none;
-  transition: 0.2s;
+  color: #D5D5D6;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
 }
 
+/* Hover эффект */
 .link:hover {
-  color: white;
+  background: linear-gradient(135deg, #8599AB, #A8B5C2);
+  color: #2E4265;
+  transform: translateX(5px);
+}
+
+/* Активная ссылка (если используешь NavLink потом) */
+.active {
+  background: linear-gradient(135deg, #A8B5C2, #D5D5D6);
+  color: #2E4265;
+  font-weight: 600;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    margin-bottom: 0;
+  }
 }

@@ -19,8 +19,6 @@ function App() {
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/kanban" element={<Kanban />} />
           <Route path="/todo" element={<Todo/>} />
-          
-          
         </Routes>
       </MainLayout>
     </BrowserRouter>
