@@ -17,6 +17,7 @@ function App() {
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/tasks" element={<Tasks />} />
           <Route path="/kanban" element={<Kanban />} />
+          <Route path="/Hellow" element={ <h1>Hellow world</h1>}/>
         </Routes>
       </MainLayout>
     </BrowserRouter>
