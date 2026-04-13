@@ -1,14 +1,24 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  query,
+  orderBy,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
+
 import { db } from "../firebase/firebase";
+import StudentForm from "../components/StudentForm";
 import StudentList from "../components/StudentList";
 import SearchBar from "../components/SearchBar";
 import FilterBar from "../components/FilterBar";
 
-function Home() {
+function AdminPage() {
   const [students, setStudents] = useState([]);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("all");
+  const [editStudent, setEditStudent] = useState(null);
 
   const fetchStudents = async () => {
     const q = query(collection(db, "students"), orderBy("createdAt", "desc"));
@@ -24,6 +34,11 @@ function Home() {
     fetchStudents();
   }, []);
 
+  const handleDelete = async (id) => {
+    await deleteDoc(doc(db, "students", id));
+    fetchStudents();
+  };
+
   const filteredStudents = students
     .filter((s) =>
       s.name?.toLowerCase().includes(search.toLowerCase())
@@ -32,19 +47,25 @@ function Home() {
 
   return (
     <div>
-      <h1>Students</h1>
+      <h1>Admin Panel</h1>
+
+      <StudentForm
+        fetchStudents={fetchStudents}
+        editStudent={editStudent}
+        setEditStudent={setEditStudent}
+      />
 
       <SearchBar setSearch={setSearch} />
       <FilterBar setStatus={setStatus} />
 
       <StudentList
         students={filteredStudents}
-        onDelete={() => {}}
-        onEdit={() => {}}
-        isAdmin={false}
+        onDelete={handleDelete}
+        onEdit={setEditStudent}
+        isAdmin={true}
       />
     </div>
   );
 }
 
-export default Home;
+export default AdminPage;

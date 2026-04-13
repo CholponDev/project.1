@@ -1,23 +1,22 @@
 .container {
   display: flex;
-  justify-content: center;
   gap: 10px;
   margin: 15px 0;
   flex-wrap: wrap;
 }
 
 .button {
-  background-color: #0d6efd; /* ярко-синий */
-  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
   border: none;
-  padding: 8px 18px;
-  border-radius: 6px;
+  background: #eef4ff;
+  color: #2f80ed;
   cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  font-size: 13px;
+  transition: 0.2s;
 }
 
 .button:hover {
-  background-color: #198754; /* ярко-зелёный при наведении */
-  transform: scale(1.05);
+  background: #2f80ed;
+  color: white;
 }

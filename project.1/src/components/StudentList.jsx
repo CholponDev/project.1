@@ -1,17 +1,16 @@
-import style from '../styles/StudentList.module.css'
-
-import StudentItem from "./StudentItem";
-
-function StudentList({ students, onDelete, onEdit }) {
+function StudentList({ students, onDelete, onEdit, isAdmin }) {
   return (
-    <div className={style.list}>
+    <div>
       {students.map((s) => (
-        <StudentItem
-          key={s.id}
-          student={s}
-          onDelete={onDelete}
-          onEdit={onEdit}
-        />
+        <div key={s.id}>
+          <p>{s.name}</p>
+          {isAdmin && (
+            <>
+              <button onClick={() => onEdit(s)}>Edit</button>
+              <button onClick={() => onDelete(s.id)}>Delete</button>
+            </>
+          )}
+        </div>
       ))}
     </div>
   );

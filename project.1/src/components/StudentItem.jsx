@@ -1,6 +1,13 @@
 import style from '../styles/StudentItem.module.css'
 
-function StudentItem({ student, onDelete, onEdit }) {
+function StudentItem({ student, onDelete, onEdit, isAdmin }) {
+  {isAdmin && (
+  <div className={style.buttons}>
+    <button onClick={() => onEdit(student)}>Edit</button>
+    <button onClick={() => onDelete(student.id)}>Delete</button>
+  </div>
+)}
+
   return (
     <div className={style.card} style={{ border: "1px solid #ccc", margin: 10, padding: 10 }}>
       <h3 className={style.name}>{student.name}</h3>
