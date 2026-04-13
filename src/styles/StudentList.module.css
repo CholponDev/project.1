@@ -1,6 +1,165 @@
+.wrapper {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(180deg, #2E4265, #24344f);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* LIST */
 .list {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* CARD */
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 16px 18px;
+  border-radius: 14px;
+
+  background: rgba(46, 66, 101, 0.75);
+  border: 1px solid rgba(133, 153, 171, 0.25);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.4s ease forwards;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(213, 213, 6, 0.4);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* CONTENT */
+.content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* AVATAR */
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
   justify-content: center;
-  margin: 20px 0;
+
+  background: rgba(168, 181, 194, 0.15);
+  border: 1px solid rgba(133, 153, 171, 0.4);
+
+  color: #A8B5C2;
+  font-weight: 600;
+}
+
+/* TEXT */
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #A8B5C2;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: #8FA3BC;
+  margin: 2px 0 0;
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* BUTTONS */
+.editBtn,
+.deleteBtn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition: all 0.2s ease;
+}
+
+/* EDIT */
+.editBtn {
+  background: rgba(133, 153, 171, 0.2);
+  color: #A8B5C2;
+  border: 1px solid rgba(133, 153, 171, 0.3);
+}
+
+.editBtn:hover {
+  background: rgba(133, 153, 171, 0.35);
+  transform: translateY(-2px);
+}
+
+/* DELETE (accent) */
+.deleteBtn {
+  background: rgba(213, 213, 6, 0.15);
+  color: #D5D506;
+  border: 1px solid rgba(213, 213, 6, 0.35);
+}
+
+.deleteBtn:hover {
+  background: rgba(213, 213, 6, 0.25);
+  transform: translateY(-2px);
+}
+
+/* CLICK EFFECT */
+.editBtn:active,
+.deleteBtn:active {
+  transform: scale(0.96);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .editBtn,
+  .deleteBtn {
+    flex: 1;
+    text-align: center;
+  }
 }
