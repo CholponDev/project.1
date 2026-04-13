@@ -20,7 +20,7 @@ function App() {
           <Route path="/kanban" element={<Kanban />} />
           <Route path="/todo" element={<Todo/>} />
           
-          <Route path="/Hellow" element={ <h1>Hellow world</h1>}/>
+          
         </Routes>
       </MainLayout>
     </BrowserRouter>
